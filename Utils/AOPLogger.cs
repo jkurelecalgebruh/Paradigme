@@ -1,4 +1,5 @@
 ﻿using Castle.DynamicProxy;
+using Metrics;
 
 namespace Back.Utils
 { 
@@ -14,8 +15,7 @@ namespace Back.Utils
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception in method {invocation.Method.Name}: {ex.Message}", "AOPLogger");
-                throw;
+                Console.WriteLine($"Exception in method {invocation.Method.Name}: {ex.Message}");
             }
         }
     }
