@@ -35,7 +35,7 @@ builder.Services.AddAuthentication(options =>
             ValidAudience = "mojFrontend"
         };
     });
-
+HealthChecks.RegisterHealthCheck(new DatabaseHealthCheck(new MySqlContext()));
 Metric.Config.WithHttpEndpoint("http://localhost:12345/").WithAllCounters();
 
 string relativeStoragePath = builder.Configuration["ImagePath"];
