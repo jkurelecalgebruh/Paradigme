@@ -17,6 +17,7 @@ using Back.Repositories;
 
 namespace Back.Controllers
 {
+    [Counter("ImagesController")]
     [Route("images")]
     [ApiController]
     public class ImagesController : ControllerBase

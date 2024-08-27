@@ -7,13 +7,11 @@ using front.Utils.Logger;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
-using System;
 using System.Data;
-using System.Net;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Back.Controllers
 {
+    [Counter("UsersController")]
     [Route("/users")]
     [ApiController]
     public class UsersController : ControllerBase

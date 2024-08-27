@@ -1,4 +1,5 @@
-﻿using Back.Auth;
+﻿using Back.Attributes;
+using Back.Auth;
 using Back.Db;
 using Back.Models;
 using front.Utils.Logger;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Back.Controllers
 {
+    [Counter("LoginController")]
     [Route("login")]
     [ApiController]
     public class LoginController : ControllerBase

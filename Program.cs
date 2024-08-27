@@ -2,6 +2,7 @@ using Back.Auth;
 using Back.Db;
 using Back.Services;
 using Back.Utils;
+using Metrics;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -34,6 +35,8 @@ builder.Services.AddAuthentication(options =>
             ValidAudience = "mojFrontend"
         };
     });
+
+Metric.Config.WithHttpEndpoint("http://localhost:12345/").WithAllCounters();
 
 string relativeStoragePath = builder.Configuration["ImagePath"];
 string parentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;

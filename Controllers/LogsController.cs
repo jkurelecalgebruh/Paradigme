@@ -1,10 +1,12 @@
-﻿using front.Models;
+﻿using Back.Attributes;
+using front.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Back.Controllers
 {
+    [Counter("LogsController")]
     [Route("logs")]
     [ApiController]
     public class LogsController : ControllerBase

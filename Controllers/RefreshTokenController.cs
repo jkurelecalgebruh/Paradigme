@@ -1,4 +1,5 @@
-﻿using Back.Auth;
+﻿using Back.Attributes;
+using Back.Auth;
 using Back.Db;
 using Back.Models;
 using front.Utils.Logger;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 
 namespace Back.Controllers
 {
+    [Counter("RefreshTokenController")]
     [Route("/refreshToken")]
     [ApiController]
     public class RefreshTokenController : ControllerBase
